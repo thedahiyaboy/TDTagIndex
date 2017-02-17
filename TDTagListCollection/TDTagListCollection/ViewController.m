@@ -27,23 +27,21 @@
     
     arrTagList = [[NSMutableArray alloc] initWithObjects:@"helasfafdflo", @"How", @"are", @"you", @"sir",@"heya",@"woow", nil];
     
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)actionTagCancel:(UIButton *)sender {
-    [arrTagList removeObjectAtIndex:sender.tag];
-    [self.collecTagCategory reloadData];
     
+    UICollectionViewCell *aCell = (UICollectionViewCell*)[[[sender superview] superview]superview];
+    [arrTagList removeObjectAtIndex:[_collecTagCategory indexPathForCell:aCell].row];
+    [self.collecTagCategory deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:[_collecTagCategory indexPathForCell:aCell].row inSection:0]]];
 }
 
 
@@ -68,13 +66,10 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TagViewListCell *tagCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tagCell" forIndexPath:indexPath];
     tagCell.viewTag.layer.cornerRadius = 4;
-
-    tagCell.btnTagCancel.tag = indexPath.row;
     
     tagCell.lblTagName.text = arrTagList[indexPath.row];
     _constTagViewHeight.constant = _collecTagCategory.contentSize.height;
     return tagCell;
-    
 }
 
 
