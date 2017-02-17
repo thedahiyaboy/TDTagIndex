@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MYi-2b-AgO">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="irO-gM-ZTb"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="AUL-Q9-om9">
+                                    <size key="itemSize" width="79" height="34"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCell" id="pMg-Pi-mhu" customClass="TagViewListCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo2-gu-O20" userLabel="Tag View">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J20-Bd-NsG">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPR-R0-ZgA">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="noY-pm-xtd"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Cancel_32"/>
+                                                            <connections>
+                                                                <action selector="actionTagCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5S-h6-A5a"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="J20-Bd-NsG" firstAttribute="top" secondItem="Jo2-gu-O20" secondAttribute="top" id="27U-bx-CJZ"/>
+                                                        <constraint firstItem="JPR-R0-ZgA" firstAttribute="top" secondItem="Jo2-gu-O20" secondAttribute="top" id="LUW-4h-pTo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JPR-R0-ZgA" secondAttribute="trailing" id="lb1-uY-odI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="J20-Bd-NsG" secondAttribute="bottom" id="q35-sE-Z48"/>
+                                                        <constraint firstItem="JPR-R0-ZgA" firstAttribute="leading" secondItem="J20-Bd-NsG" secondAttribute="trailing" id="rAB-SL-FGR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JPR-R0-ZgA" secondAttribute="bottom" id="rxy-e8-aya"/>
+                                                        <constraint firstItem="J20-Bd-NsG" firstAttribute="leading" secondItem="Jo2-gu-O20" secondAttribute="leading" id="ugo-Qq-08J"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Jo2-gu-O20" firstAttribute="leading" secondItem="pMg-Pi-mhu" secondAttribute="leading" constant="2" id="2Dl-U3-Vs2"/>
+                                            <constraint firstItem="Jo2-gu-O20" firstAttribute="top" secondItem="pMg-Pi-mhu" secondAttribute="top" constant="2" id="aNi-ic-AgM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jo2-gu-O20" secondAttribute="bottom" constant="2" id="jWV-Z4-oBI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jo2-gu-O20" secondAttribute="trailing" constant="2" id="nw1-dY-nkx"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="btnTagCancel" destination="JPR-R0-ZgA" id="0tf-Mn-8o7"/>
+                                            <outlet property="lblTagName" destination="J20-Bd-NsG" id="0j6-1J-jwR"/>
+                                            <outlet property="viewTag" destination="Jo2-gu-O20" id="lOd-1A-rd8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qrG-Uo-L8J"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="anH-uW-KKt"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MYi-2b-AgO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Itl-ep-22c"/>
+                            <constraint firstItem="MYi-2b-AgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="ed3-cO-CQf"/>
+                            <constraint firstAttribute="trailing" secondItem="MYi-2b-AgO" secondAttribute="trailing" id="sMm-BZ-j7t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collecTagCategory" destination="MYi-2b-AgO" id="4T2-av-Swb"/>
+                        <outlet property="constTagViewHeight" destination="irO-gM-ZTb" id="rDa-NQ-yTZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="99.400299850074973"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cancel_32" width="16" height="16"/>
+    </resources>
+</document>
